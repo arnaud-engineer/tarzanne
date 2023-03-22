@@ -15,8 +15,8 @@
 :root
 {
 
-	--loader-width: 20vw;
-  --loader-size: 10vh;
+	--loader-width: min(40vw, 40vh);
+  --loader-size: min(10vw, 10vh);
 
 
 
