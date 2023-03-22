@@ -283,6 +283,7 @@ main
 
 	border: var(--textColor) 5vh solid;
 
+	min-width: 400px;
 	width: min(50vh,50vw);
 	height: min(50vh,50vw);
 
@@ -372,6 +373,7 @@ main h2
 
 	border: var(--backgroundColor) 5vh solid;
 
+	min-width: 400px;
 	width: min(50vh,50vw);
 	height: min(50vh,50vw);
 
@@ -427,8 +429,8 @@ main h2
 	z-index: 500;
 	position: fixed;
 	top: 40vh;
-	left: 10vw;
-	width: 80vw;
+	left: 15vh;
+	width: calc(100vw - 30vh);
 	height: 12vh;
 
 	font-size: min(10vh, 10vw);
