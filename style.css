@@ -19,9 +19,10 @@
   --loader-size: min(10vw, 10vh);
 
 
-
 	--backgroundColor: #967259;
 	--textColor: #ece0d1;
+
+	--shadowMotionDelta: .2%;
 
 	font-family: Squatina;
 	text-transform: uppercase;
@@ -106,8 +107,8 @@ body
 
 
 @keyframes shadowMotion {
-  from { transform: translate(-51%, -51%); }
-  to   { transform: translate(-49%, -49%); }
+  from { transform: translate(-50.5%, -50.5%); }
+  to   { transform: translate(-49.5%, -49.5%); }
 }
 
 @keyframes shadowMotionReverse {
@@ -275,13 +276,19 @@ main
 	transition: all 0.5s ease-out;
 
 	cursor: pointer;
+
+	filter: drop-shadow(0 0 min(20vh, 20vw) black);
 }
 
 	main:hover
 	{
-		opacity: .8;
-		transform: translate(-50%, -50%) scale(1.02);
-		filter: drop-shadow(16px 16px 20px var(--backgroundColor));
+		transform: translate(-50%, -50%) scale(.999);
+		filter: drop-shadow(0 0 min(20vh, 20vw) black) contrast(200%);
+	}
+
+	main:hover + #main-shadow
+	{
+		filter: blur(1px);
 	}
 
 main h1
