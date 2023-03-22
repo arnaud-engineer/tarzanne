@@ -1,0 +1,451 @@
+@font-face {
+    font-family: 'Squatina';
+    src: url('fonts/Squatina-Regular.eot');
+    src: url('fonts/Squatina-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Squatina-Regular.woff2') format('woff2'),
+        url('fonts/Squatina-Regular.woff') format('woff'),
+        url('fonts/Squatina-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+:root
+{
+
+	--loader-width: 20vw;
+  --loader-size: 10vh;
+
+
+
+	--backgroundColor: #967259;
+	--textColor: #ece0d1;
+
+	font-family: Squatina;
+	text-transform: uppercase;
+	text-align: center;
+
+	background-color: black;
+
+}
+
+
+* { user-select: none; }
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  z-index: 9;
+}
+
+.loader-container {
+  position: relative;
+  background: black;
+  width: var(--loader-width);
+  height: var(--loader-size);
+}
+.loader-container span {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--textColor);
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border-radius: 50%;
+  opacity: 0;
+  animation: loader-anim forwards 2.5s infinite ease-in-out;
+}
+.loader-container span:nth-child(2) {
+  animation-delay: 0.75s;
+}
+.loader-container span:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+@keyframes loader-anim {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 0.25;
+  }
+  25%, 75% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  90% {
+    transform: translateX(calc(var(--loader-width) - var(--loader-size)));
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(calc(var(--loader-width) - var(--loader-size)));
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+body
+{
+	overflow: hidden !important;
+}
+
+
+@keyframes shadowMotion {
+  from { transform: translate(-51%, -51%); }
+  to   { transform: translate(-49%, -49%); }
+}
+
+@keyframes shadowMotionReverse {
+  from { transform: translate(-49%, -49%); }
+  to   { transform: translate(-51%, -51%); }
+}
+
+@keyframes backgroundMotion {
+  from   	{ transform: translate(min(-.5vh, -.5vw), min(-.5vh, -.5vw)); }
+  to 			{ transform: translate(min(.5vh, .5vw), min(.5vh, .5vw)); }
+}
+
+@keyframes backgroundMotionReverse {
+  from   	{ transform: scaleX(-1) translate(min(-.5vh, -.5vw), min(-.5vh, -.5vw)); }
+  to 			{ transform: scaleX(-1) translate(min(.5vh, .5vw), min(.5vh, .5vw)); }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: scale(1.04);
+    opacity: .9;
+  }
+  
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+#frame
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 10;
+
+	width: calc(100vw - 10vh);
+	height: calc(100vh - 10vh);
+	overflow: hidden;
+
+	border: var(--textColor) 5vh solid;
+
+	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+}
+
+#video-background
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	z-index: 1;
+
+	width: 100vw;
+	height: 85vh;
+	overflow: hidden;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	background-color: black;
+
+	filter: blur(.75px);
+}
+
+	#video-background video
+	{
+		padding-top: min(12vh, 12vw, 12%);
+		height: 110vh;
+		min-width: 300px;
+		max-width: 50vw;
+
+		margin: auto;
+	}
+
+.background
+{
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 5;
+
+	width: calc(100vw - 10vh);
+	height: calc(100vh - 10vh);
+	overflow: hidden;
+
+	border: var(--backgroundColor) 5vh solid;
+
+	transition: all 1.75s ease-out;
+}
+
+		.background#lay1
+		{
+			opacity: .95;
+			border: none;
+			width: 100vw;
+			height: 100vh;
+
+			animation: 3s ease-in-out alternate infinite backgroundMotionReverse;
+		}
+
+		.background#lay2
+		{
+			animation: 3s ease-in-out alternate infinite backgroundMotion;
+		}
+
+	.background .layer
+	{
+		width: max(100vw, 100vh);
+		height: max(100vw, 100vh);
+
+		animation: 3s ease-in-out alternate infinite backgroundMotion;
+
+		position: relative;
+	}
+
+		.background .layer img
+		{
+
+			width: max(100vw, 100vh);
+			height: max(100vw, 100vh);
+
+			position: absolute;
+	    top: -9999px;
+	    bottom: -9999px;
+	    left: -9999px;
+	    right: -9999px;
+	    margin: auto;
+
+		}
+
+
+
+
+main
+{
+	background-color: #FFFFFF00;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	z-index: 10;
+
+	border: var(--textColor) 5vh solid;
+
+	width: min(50vh,50vw);
+	height: min(50vh,50vw);
+
+	transition: all 0.5s ease-out;
+
+	cursor: pointer;
+}
+
+	main:hover
+	{
+		opacity: .8;
+		transform: translate(-50%, -50%) scale(1.02);
+		filter: drop-shadow(16px 16px 20px var(--backgroundColor));
+	}
+
+main h1
+{
+	font-size: min(13vh,13vw);
+	color: var(--textColor);
+}
+
+main h2
+{
+	font-size: min(6vh,6vw);
+	color: var(--textColor);
+}
+
+
+#main-shadow
+{
+	background: url("img/Tarzanne.png") no-repeat center/100%;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-51%, -51%);
+
+	z-index: 8;
+
+	border: var(--backgroundColor) 5vh solid;
+
+	width: min(50vh,50vw);
+	height: min(50vh,50vw);
+
+	animation: 3s ease-in-out alternate-reverse infinite shadowMotion;
+}
+
+#main-shadow h1
+{
+	font-size: min(13vh,13vw);
+	color: var(--backgroundColor);
+}
+
+#main-shadow h2
+{
+	font-size: min(6vh,6vw);
+	color: var(--backgroundColor);
+}
+
+
+
+
+
+
+
+
+#clue
+{
+	z-index: 500;
+	position: fixed;
+	top: 40vh;
+	left: 10vw;
+	width: 80vw;
+	height: 12vh;
+
+	font-size: min(10vh, 10vw);
+	color: var(--textColor);
+
+	text-align: center;
+	vertical-align: middle;
+	margin: .5vh;
+	margin-top: .25vh;
+
+	animation: 6s ease-in-out alternate infinite pulse;
+
+	transition: all 0.5s ease-out;
+
+	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+	cursor: pointer !important;
+}
+
+
+	#clue-text
+	{
+		display: inline-block;
+		transition: all 0.5s ease-out;
+	}
+
+		#clue-text:hover
+		{
+			transform: scale(1.1);
+		}
+
+
+
+
+
+.blurred
+{
+	opacity: 0 !important;
+	filter: blur(50px);
+
+	animation: none;
+}
+
+	.displayed-blur
+	{ filter: blur(3px) !important; }
+
+.hidden
+{
+	opacity: 0 !important;
+	filter: blur(0px) !important;
+
+	animation: none !important;
+}
+
+.not-here
+{
+	display: none !important;
+}
+
+
+
+
+
+#credit
+{
+	z-index: 11;
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: black;
+	padding: .5vh;
+	margin-right: 7.5vh;
+	font-size: 4vh;
+
+	opacity: .6;
+}
+
+#createdby
+{
+	z-index: 12;
+	position: fixed;
+	top: 95vh;
+	left: 0;
+	color: black;
+	padding: .5vh;
+	margin-left: 7.5vh;
+	font-size: 4vh;
+
+	display: block;
+
+	opacity: .7;
+}
+
+	#createdby a
+	{
+		display: inline-block;
+		height: 4vh;
+		width: auto;
+
+	}
+
+		#createdby a img
+		{
+			display: inline-block;
+			height: 4vh;
+			width: auto;
+		}
