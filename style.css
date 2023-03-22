@@ -155,15 +155,22 @@ body
 
 	z-index: 10;
 
-	width: calc(100vw - 10vh);
-	height: calc(100vh - 10vh);
+	width: calc(100vw - 20vh);
+	height: calc(100vh - 20vh);
 	overflow: hidden;
+
+	margin: 5vh;
 
 	border: var(--textColor) 5vh solid;
 
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
 
 }
+
+	.mobile #frame
+	{
+		height: calc(100vh - 25vh);
+	}
 
 #video-background
 {
@@ -207,12 +214,16 @@ body
 
 	width: calc(100vw - 10vh);
 	height: calc(100vh - 10vh);
-	overflow: hidden;
 
 	border: var(--backgroundColor) 5vh solid;
 
 	transition: all 1.75s ease-out;
 }
+
+	.mobile .background
+	{
+		height: calc(100vh - 15vh);
+	}
 
 		.background#lay1
 		{
@@ -252,6 +263,8 @@ body
 	    right: -9999px;
 	    margin: auto;
 
+	    transform: scale(1.15);
+
 		}
 
 
@@ -278,6 +291,7 @@ main
 	cursor: pointer;
 
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+	text-shadow: 0 0 min(.2vh,.2vw) black;
 }
 
 	main:hover
@@ -290,6 +304,24 @@ main
 	{
 		filter: blur(1px);
 	}
+
+	main#main.safari-compatible
+	{
+		filter: none !important;
+		background: url("img/Tarzanne.png") no-repeat center/100%;
+	}
+
+		main#main.safari-compatible:hover
+		{
+			opacity: .7;
+		}
+
+		main#main.safari-compatible h1,
+		main#main.safari-compatible h2,
+		main#main.safari-compatible p
+		{
+			filter: none !important;
+		}
 
 main h1
 {
@@ -347,6 +379,7 @@ main h2
 	height: min(50vh,50vw);
 
 	animation: 3s ease-in-out alternate-reverse infinite shadowMotion;
+	text-shadow: 0 0 min(.2vh,.2vw) black;
 }
 
 #main-shadow h1
@@ -416,6 +449,7 @@ main h2
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
 
 	cursor: pointer !important;
+	text-shadow: 0 0 min(.2vh,.2vw) black;
 }
 
 
@@ -466,8 +500,8 @@ main h2
 {
 	z-index: 11;
 	position: fixed;
-	top: 0;
-	right: 0;
+	top: 5vh;
+	right: 5vh;
 	color: var(--backgroundColor);
 	padding: .5vh;
 	padding-top: 0;
@@ -512,8 +546,8 @@ main h2
 {
 	z-index: 12;
 	position: fixed;
-	top: 95vh;
-	left: 0;
+	top: 90vh;
+	left: 5vh;
 	color: black;
 	padding: .5vh;
 	margin: 0;
@@ -530,6 +564,11 @@ main h2
 	align-items: center;
 
 }
+
+	.mobile #createdby
+	{
+		top:85vh;
+	}
 
 	#createdby a
 	{
@@ -556,3 +595,16 @@ main h2
 			height: 4vh;
 			width: auto;
 		}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    ::i-block-chrome #main-shadow {
+    		display: none !important;
+    }
+}
+
+
+_::-webkit-full-page-media, _:future, :root .safari_only #main-shadow
+{
+	display: none !important;
+}
