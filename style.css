@@ -289,6 +289,25 @@ main h1
 	font-size: min(13vh,13vw);
 	color: var(--textColor);
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
+}
+
+main p
+{
+	font-size: min(3vh,3vw);
+	color: var(--textColor);
+	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
 }
 
 main h2
@@ -296,6 +315,11 @@ main h2
 	font-size: min(6vh,6vw);
 	color: var(--textColor);
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
 }
 
 
@@ -322,12 +346,36 @@ main h2
 {
 	font-size: min(13vh,13vw);
 	color: var(--backgroundColor);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
+}
+
+#main-shadow p
+{
+	font-size: min(3vh,3vw);
+	color: var(--textColor);
+	filter: drop-shadow(0 0 min(20vh, 20vw) black);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
 }
 
 #main-shadow h2
 {
 	font-size: min(6vh,6vw);
 	color: var(--backgroundColor);
+
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 1vh;
+	padding-bottom: 0;
 }
 
 
