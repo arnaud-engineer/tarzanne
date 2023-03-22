@@ -3,6 +3,7 @@
 	========================================================================= */
 
 var tour = 0;
+var isFullscreen = false;
 
 async function updateInputHint(text)
 {
@@ -51,7 +52,21 @@ async function nextTour() {
 }
 
 
+async function tryFullscreen() {
+	try
+	{
+		if(document.fullscreenEnabled && !isFullscreen) {
+			document.getElementsByTagName("body")[0].requestFullscreen();
+			isFullscreen = true;
+		}
+	}
+	catch(e) { console.log("fullscreen failed") }
+}
+
+
 async function pageLoading() {
+	window.scrollTo(0, 1);
+	tryFullscreen();
 	await new Promise(r => setTimeout(r, 4000));
 	return;
 }
