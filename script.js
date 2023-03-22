@@ -36,7 +36,7 @@ async function nextTour() {
 			document.getElementById("video-background").classList.remove("not-here");
 			await new Promise(r => setTimeout(r, 1));
 			document.getElementById("video-background").classList.remove("hidden");
-			await updateInputHint("Encore, n'ai crainte ...");
+			await updateInputHint("Encore, n'ai crainte...");
 			tour++;
 			break;
 		case 1 :
@@ -149,9 +149,9 @@ function mainButtonClick() {
 	switch(nbMainButtonClicks) {
 		case 0 :
 			document.getElementById("main").getElementsByTagName("h1")[0].innerHTML = "Adresse mail copiee !";
-			document.getElementById("main-shadow").getElementsByTagName("h2")[0].innerHTML = "Adresse mail copiee !";
+			//document.getElementById("main-shadow").getElementsByTagName("h1")[0].innerHTML = "Adresse mail copiee !";
 			document.getElementById("main").getElementsByTagName("p")[0].innerHTML = "Clique une deuxieme fois pour ouvrir ton client mail";
-			document.getElementById("main-shadow").getElementsByTagName("p")[0].innerHTML = "Clique une deuxieme fois pour ouvrir ton client mail";
+			//document.getElementById("main-shadow").getElementsByTagName("p")[0].innerHTML = "Clique une deuxieme fois pour ouvrir ton client mail";
 			navigator.clipboard.writeText("stakhavov@tarzanne.fr");
 			nbMainButtonClicks++;
 			break;

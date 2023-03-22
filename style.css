@@ -283,8 +283,9 @@ main
 
 	border: var(--textColor) 5vh solid;
 
-	min-width: 400px;
+	min-width: 340px;
 	width: min(50vh,50vw);
+	min-height: 340px;
 	height: min(50vh,50vw);
 
 	transition: all 0.5s ease-out;
@@ -326,36 +327,36 @@ main
 
 main h1
 {
-	font-size: min(13vh,13vw);
+	font-size: min(12vh,12vw);
 	color: var(--textColor);
 
 	margin-top: 0;
+	margin-bottom: .5vh;
 	padding-top: 0;
-	margin-bottom: 1vh;
 	padding-bottom: 0;
 }
 
 main p
 {
-	font-size: min(3vh,3vw);
+	font-size: max(21px,min(3vh,2vw));
 	color: var(--textColor);
 
 	margin-top: 0;
 	padding-top: 0;
 	margin-left: 1vh;
 	margin-right: 1vh;
-	margin-bottom: 1vh;
+	margin-bottom: .5vh;
 	padding-bottom: 0;
 }
 
 main h2
 {
-	font-size: min(6vh,6vw);
+	font-size: min(5.5vh,5.5vw);
 	color: var(--textColor);
 
 	margin-top: 0;
 	padding-top: 0;
-	margin-bottom: 1vh;
+	margin-bottom: 0;
 	padding-bottom: 0;
 }
 
@@ -373,9 +374,10 @@ main h2
 
 	border: var(--backgroundColor) 5vh solid;
 
-	min-width: 400px;
+	min-width: 340px;
 	width: min(50vh,50vw);
 	height: min(50vh,50vw);
+	min-height: 340px;
 
 	animation: 3s ease-in-out alternate-reverse infinite shadowMotion;
 	text-shadow: 0 0 min(.2vh,.2vw) black;
@@ -394,7 +396,7 @@ main h2
 
 #main-shadow p
 {
-	font-size: min(3vh,3vw);
+	font-size: min(3.2vh,3.2vw);
 	color: var(--textColor);
 	filter: drop-shadow(0 0 min(20vh, 20vw) black);
 
